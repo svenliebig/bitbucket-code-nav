@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Creates between Bitbucket sourcefiles",
   "main": "src/index.ts",
-  "repository": "https://github.com/Sly321",
+  "repository": "https://github.com/Sly321/bitbucket-code-nav",
   "homepage": "https://github.com/Sly321",
   "dist": "dist",
   "license": "MIT",

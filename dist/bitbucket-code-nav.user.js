@@ -8,8 +8,8 @@
 // @namespace     https://github.com/Sly321
 // @authorversion Sven Liebig
 // @grant         none
-// @updateURL     https://github.com/Sly321/raw/master/dist/bitbucket-code-nav.user.js
-// @downloadURL   https://github.com/Sly321/raw/master/dist/bitbucket-code-nav.user.js
+// @updateURL     https://github.com/Sly321/bitbucket-code-nav/raw/master/dist/bitbucket-code-nav.user.js
+// @downloadURL   https://github.com/Sly321/bitbucket-code-nav/raw/master/dist/bitbucket-code-nav.user.js
 // ==/UserScript==
 
 /******/ (function(modules) { // webpackBootstrap
