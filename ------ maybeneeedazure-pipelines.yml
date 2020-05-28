@@ -1,0 +1,75 @@
+# Node.js with webpack
+# Build a Node.js project using the webpack CLI.
+# Add steps that analyze code, save build artifacts, deploy, and more:
+# https://docs.microsoft.com/azure/devops/pipelines/languages/javascript
+
+strategy:
+ matrix:
+  linux:
+   imageName: 'ubuntu-latest'
+   withSonar: true
+  mac:
+   imageName: 'macOS-latest'
+   withSonar: false
+  windows:
+   imageName: 'windows-latest'
+   withSonar: false
+
+variables:
+  withSonar: $(withSonar)
+  
+
+trigger:
+ branches:
+   include:
+     - '*'
+
+pool:
+  vmImage: $(imageName)
+  
+steps:
+- task: NodeTool@0
+  inputs:
+    versionSpec: '10.x'
+    checkLatest: true
+  displayName: 'Install Node.js'
+
+- script: |    
+    yarn install    
+  displayName: 'yarn install'
+
+- script: |
+    yarn test
+  displayName: yarn test
+
+- task: PublishTestResults@2
+  inputs:
+    testResultsFormat: 'JUnit'
+    testResultsFiles: '**/junit.xml'
+    mergeTestResults: true
+    failTaskOnFailedTests: true
+
+- task: PublishCodeCoverageResults@1
+  inputs:
+    codeCoverageTool: 'Cobertura'
+    summaryFileLocation: 'coverage/cobertura-coverage.xml'
+    pathToSources: 'src'
+    reportDirectory: 'coverage/lcov-report'
+    failIfCoverageEmpty: true
+  condition: eq(variables.withSonar,true)
+
+- task: SonarCloudPrepare@1
+  inputs:
+    SonarCloud: 'SonarCloud MarMer'
+    organization: 'marmer-github'
+    scannerMode: 'CLI'
+    configMode: 'file'
+  condition: eq(variables.withSonar,true)
+
+- task: SonarCloudAnalyze@1
+  condition: eq(variables.withSonar,true)
+
+- task: SonarCloudPublish@1
+  inputs:
+    pollingTimeoutSec: '300'
+  condition: eq(variables.withSonar,true)
