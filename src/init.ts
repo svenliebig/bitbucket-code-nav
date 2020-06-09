@@ -1,5 +1,5 @@
 import { read, Document } from "./utils/lineparser"
-import JavascriptPlugin, { importRegex } from "./utils/js/index"
+import JavascriptPlugin from "./utils/js/javascript-plugin"
 import { extname } from "path"
 import { resolve } from "url"
 
@@ -22,19 +22,22 @@ export function init(codemirror: Element): void {
 function createLinks(plugin: Plugin, document: Document): void {
     document.lines
         .filter((line) => plugin.importFilter(line.value))
-        .forEach((line) => {
+        .forEach(async (line) => {
             const ext = extname(document.path)
 
             const importFile = plugin.importPath(line.value) + ext
             const url = resolve(document.path, importFile)
 
-            const link = window.document.createElement("a")
-            link.setAttribute("href", url)
-            const textToWrap = line.element.querySelector(".cm-string")
+            const response = await fetch(url)
+            if (response.ok) {
+                const link = window.document.createElement("a")
+                link.setAttribute("href", url)
+                const textToWrap = line.element.querySelector(".cm-string")
 
-            if (textToWrap) {
-                textToWrap.parentNode?.insertBefore(link, textToWrap)
-                link.appendChild(textToWrap)
+                if (textToWrap) {
+                    textToWrap.parentNode?.insertBefore(link, textToWrap)
+                    link.appendChild(textToWrap)
+                }
             }
         })
 }
