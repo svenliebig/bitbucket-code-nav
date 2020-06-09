@@ -6,6 +6,7 @@ printWidth: 160
 tabWidth: 4
 
 overrides:
-  - files: "*.md"
-    options:
-      tabWidth: 1
+    - files: "*.md"
+      options:
+          tabWidth: 1
+endOfLine: auto

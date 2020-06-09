@@ -4,7 +4,7 @@
 // @author        Sven Liebig
 // @description   Creates between Bitbucket sourcefiles
 // @homepage      https://github.com/Sly321
-// @match         https://bitbucket.schuetze.ag/projects/ISBJRD/repos/*.tsx
+// @match         https://bitbucket.schuetze.ag/projects/*/repos/*/browse/*
 // @namespace     https://github.com/Sly321
 // @authorversion Sven Liebig
 // @grant         none

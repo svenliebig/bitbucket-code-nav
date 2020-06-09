@@ -15,7 +15,7 @@ const webpackUserScript = new WebpackUserScript({
         description: packageConfiguration.description,
         author: packageConfiguration.author.name,
         authorversion: packageConfiguration.author.name,
-        match: "https://bitbucket.schuetze.ag/projects/ISBJRD/repos/*.tsx",
+        match: "https://bitbucket.schuetze.ag/projects/*/repos/*/browse/*",
         grant: ["none"],
         updateURL: rawUrl,
         downloadURL: rawUrl,

@@ -4,7 +4,7 @@
 // @author        Sven Liebig
 // @description   Creates between Bitbucket sourcefiles
 // @homepage      https://github.com/Sly321
-// @match         https://bitbucket.schuetze.ag/projects/ISBJRD/repos/*.tsx
+// @match         https://bitbucket.schuetze.ag/projects/*/repos/*/browse/*
 // @namespace     https://github.com/Sly321
 // @authorversion Sven Liebig
 // @grant         none
@@ -120,7 +120,19 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _ini
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"init\", function() { return init; });\nfunction init(codemirror) {\r\n    var lines = Array.prototype.slice.call(codemirror.querySelector(\".line\"));\r\n    lines.forEach(function (line) {\r\n        console.log(line);\r\n    });\r\n}\r\n\n\n//# sourceURL=webpack:///./src/init.ts?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"init\", function() { return init; });\n/* harmony import */ var _utils_lineparser__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./utils/lineparser */ \"./src/utils/lineparser.ts\");\n\r\nfunction init(codemirror) {\r\n    // const lines = Array.prototype.slice.call(codemirror.querySelector(\".line\"))\r\n    var lines = Object(_utils_lineparser__WEBPACK_IMPORTED_MODULE_0__[\"read\"])(codemirror);\r\n    lines.forEach(function (line) {\r\n        console.log(line);\r\n    });\r\n}\r\n\n\n//# sourceURL=webpack:///./src/init.ts?");
+
+/***/ }),
+
+/***/ "./src/utils/lineparser.ts":
+/*!*********************************!*\
+  !*** ./src/utils/lineparser.ts ***!
+  \*********************************/
+/*! exports provided: read */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"read\", function() { return read; });\nfunction toLine(lineElement) {\r\n    var _a, _b;\r\n    var lineNumber = (_a = lineElement.querySelector(\".line-number\")) === null || _a === void 0 ? void 0 : _a.textContent;\r\n    var value = (_b = lineElement.querySelector(\".CodeMirror-line\")) === null || _b === void 0 ? void 0 : _b.textContent;\r\n    if (lineNumber && value) {\r\n        return { value: \"fsad\", lineNumber: Number.parseInt(lineNumber) };\r\n    }\r\n    throw new Error(\"Could not parse line. Maybe line-number or the text content is not readable\");\r\n}\r\nfunction read(container) {\r\n    return [].slice.call(container.getElementsByClassName(\".line\")).map(toLine);\r\n}\r\n\n\n//# sourceURL=webpack:///./src/utils/lineparser.ts?");
 
 /***/ })
 
