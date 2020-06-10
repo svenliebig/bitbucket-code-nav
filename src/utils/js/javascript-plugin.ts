@@ -1,9 +1,10 @@
 import { Plugin } from "../../init"
-import { Document } from "../lineparser"
-import { extname } from "path"
+import { Document, Line } from "../lineparser"
 import { resolve } from "url"
 
 const importRegex = /import\s[\r\n\s\w{},*\$]*\sfrom\s['"](.+)['"]/
+
+const acceptedFileExt: Array<string> = [".js", ".tsx", ".ts"]
 
 const importFilter = (content: string): boolean => {
     if (importRegex.test(content)) {
@@ -20,25 +21,32 @@ const importPath = (importLine: string): string => {
     return ""
 }
 
+type ImportLink = {
+    element: Element
+    url: string
+}
+
+const toImportLink = ({ element, value }: Line, { path, fileExt }: Document): ImportLink => {
+    const importFile = importPath(value) + fileExt
+    const url = resolve(path, importFile)
+    return { element: element, url: url }
+}
+
 const JavascriptPlugin: Plugin = {
     accept(fileExt: string): boolean {
-        return fileExt === ".js"
+        return acceptedFileExt.includes(fileExt)
     },
 
     execute(document: Document): void {
         document.lines
             .filter((line) => importFilter(line.value))
-            .forEach(async (line) => {
-                const ext = extname(document.path)
-
-                const importFile = importPath(line.value) + ext
-                const url = resolve(document.path, importFile)
-
-                const response = await fetch(url)
+            .map((line) => toImportLink(line, document))
+            .forEach(async (importLink) => {
+                const response = await fetch(importLink.url)
                 if (response.ok) {
                     const link = window.document.createElement("a")
-                    link.setAttribute("href", url)
-                    const textToWrap = line.element.querySelector(".cm-string")
+                    link.setAttribute("href", importLink.url)
+                    const textToWrap = importLink.element.querySelector(".cm-string")
 
                     if (textToWrap) {
                         textToWrap.parentNode?.insertBefore(link, textToWrap)
