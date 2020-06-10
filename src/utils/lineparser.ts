@@ -1,6 +1,9 @@
+import { extname } from "path"
+
 export type Document = {
     lines: Array<Line>
     path: string
+    fileExt: string
 }
 
 export type Line = {
@@ -20,5 +23,10 @@ function toLine(lineElement: Element): Line {
 }
 
 export function read(container: Element): Document {
-    return { path: window.location.href, lines: [].slice.call(container.getElementsByClassName("line")).map(toLine) }
+    const path = window.location.href
+    return {
+        lines: [].slice.call(container.getElementsByClassName("line")).map(toLine),
+        path: path,
+        fileExt: extname(path),
+    }
 }
