@@ -4269,9 +4269,9 @@ lodash.sortby@^4.7.0:
   integrity sha1-7dFMgk4sycHgsKG0K7UhBRakJDg=
 
 lodash@^4.17.11, lodash@^4.17.13, lodash@^4.17.14, lodash@^4.17.15:
-  version "4.17.15"
-  resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.15.tgz#b447f6670a0455bbfeedd11392eff330ea097548"
-  integrity sha512-8xOcRHvCjnocdS5cpwXQXVzmmh5e5+saE2QGoeQmbKmRS6J3VQppPOIt0MnmE+4xlZoumy0GPG0D0MVIQbNA1A==
+  version "4.17.19"
+  resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.19.tgz#e48ddedbe30b3321783c5b4301fbd353bc1e4a4b"
+  integrity sha512-JNvd8XER9GQX0v2qJgsaN/mzFCNA5BRe/j8JN9d+tWyGLSodKQHKFicdwNYzWwI3wjRnaKPsGj1XkBjx/F96DQ==
 
 loglevel@^1.6.8:
   version "1.6.8"
@@ -6794,7 +6794,7 @@ webpack-dev-middleware@^3.7.2:
     range-parser "^1.2.1"
     webpack-log "^2.0.0"
 
-webpack-dev-server@^3.8.0:
+webpack-dev-server@^3.11.0:
   version "3.11.0"
   resolved "https://registry.yarnpkg.com/webpack-dev-server/-/webpack-dev-server-3.11.0.tgz#8f154a3bce1bcfd1cc618ef4e703278855e7ff8c"
   integrity sha512-PUxZ+oSTxogFQgkTtFndEtJIPNmml7ExwufBZ9L2/Xyyd5PnOL5UreWe5ZT7IU25DSdykL9p1MLQzmLh2ljSeg==
@@ -6849,10 +6849,10 @@ webpack-sources@^1.4.0, webpack-sources@^1.4.1, webpack-sources@^1.4.3:
     source-list-map "^2.0.0"
     source-map "~0.6.1"
 
-webpack-userscript@^2.3.1:
-  version "2.5.3"
-  resolved "https://registry.yarnpkg.com/webpack-userscript/-/webpack-userscript-2.5.3.tgz#2992085e6aed2cf66d0e81d38179a630b431cf82"
-  integrity sha512-IT8vwT1tTwGOCD4j+ZG3T6MchjaLRuks6B9N7etkN0gqvoLWT6ZXD1+s6/b5SAaxO1Dh1quaWuxJk3ouRyip6A==
+webpack-userscript@^2.5.3:
+  version "2.5.4"
+  resolved "https://registry.yarnpkg.com/webpack-userscript/-/webpack-userscript-2.5.4.tgz#be2465bcf16deb9664c452412eabfee52447e957"
+  integrity sha512-OFOacd5nPa4HlvEWOjYH7Mf1hHA9T7GwT0h5u2KXLwStomRAdGYobEsWXCtkvtjHpElIcrO+/JrM5+hozAmKXQ==
   dependencies:
     "@tkausl/userscript-meta" "^1.0.2"
     dev-null "^0.1.1"
