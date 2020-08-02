@@ -2124,9 +2124,9 @@ ee-first@1.1.1:
   integrity sha1-WQxhFWsK4vTwJVcyoViyZrxWsh0=
 
 elliptic@^6.0.0, elliptic@^6.5.2:
-  version "6.5.2"
-  resolved "https://registry.yarnpkg.com/elliptic/-/elliptic-6.5.2.tgz#05c5678d7173c049d8ca433552224a495d0e3762"
-  integrity sha512-f4x70okzZbIQl/NSRLkI/+tteV/9WqL98zx+SQ69KbXxmVrmjwsNUPn/gYJJ0sHvEak24cZgHIPegRePAtA/xw==
+  version "6.5.3"
+  resolved "https://registry.yarnpkg.com/elliptic/-/elliptic-6.5.3.tgz#cb59eb2efdaf73a0bd78ccd7015a62ad6e0f93d6"
+  integrity sha512-IMqzv5wNQf+E6aHeIqATs0tOLeOTwj1QKbRcS3jBbYkl5oLAserA8yJTT7/VyHUYG91PRmPyeQDObKLPpeS4dw==
   dependencies:
     bn.js "^4.4.0"
     brorand "^1.0.1"
@@ -6794,7 +6794,7 @@ webpack-dev-middleware@^3.7.2:
     range-parser "^1.2.1"
     webpack-log "^2.0.0"
 
-webpack-dev-server@^3.8.0:
+webpack-dev-server@^3.11.0:
   version "3.11.0"
   resolved "https://registry.yarnpkg.com/webpack-dev-server/-/webpack-dev-server-3.11.0.tgz#8f154a3bce1bcfd1cc618ef4e703278855e7ff8c"
   integrity sha512-PUxZ+oSTxogFQgkTtFndEtJIPNmml7ExwufBZ9L2/Xyyd5PnOL5UreWe5ZT7IU25DSdykL9p1MLQzmLh2ljSeg==
@@ -6849,10 +6849,10 @@ webpack-sources@^1.4.0, webpack-sources@^1.4.1, webpack-sources@^1.4.3:
     source-list-map "^2.0.0"
     source-map "~0.6.1"
 
-webpack-userscript@^2.3.1:
-  version "2.5.3"
-  resolved "https://registry.yarnpkg.com/webpack-userscript/-/webpack-userscript-2.5.3.tgz#2992085e6aed2cf66d0e81d38179a630b431cf82"
-  integrity sha512-IT8vwT1tTwGOCD4j+ZG3T6MchjaLRuks6B9N7etkN0gqvoLWT6ZXD1+s6/b5SAaxO1Dh1quaWuxJk3ouRyip6A==
+webpack-userscript@^2.5.3:
+  version "2.5.5"
+  resolved "https://registry.yarnpkg.com/webpack-userscript/-/webpack-userscript-2.5.5.tgz#4ff332c5911c043ca3627d1544cb820bb50d2633"
+  integrity sha512-59zUKdfSzz6KTMRptYb875o8y8JP6haFhA7deMYVt86OUj/wGTG/uxoxlp1h+wrD5QdQBO0HAPD91pl0zbpkgw==
   dependencies:
     "@tkausl/userscript-meta" "^1.0.2"
     dev-null "^0.1.1"
