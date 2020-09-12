@@ -24,7 +24,7 @@
     "jest": "^26.0.1",
     "jest-junit": "^10.0.0",
     "jest-junit-reporter": "^1.1.0",
-    "node-fetch": "^2.6.0",
+    "node-fetch": "^2.6.1",
     "style-loader": "^1.0.0",
     "ts-jest": "^26.0.0",
     "ts-loader": "^7.0.5",
